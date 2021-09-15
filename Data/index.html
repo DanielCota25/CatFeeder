@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<title>Interface de Controle</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<body style="background-color: black;">
+    <div class="w3-bar w3-top w3-indigo w3-large" style="z-index:4">
+        <span class="w3-bar-item w3-left w3-text-black" style="text-shadow:1px 1px 0 #444">Dispenser de
+			Ra&ccedil;&atilde;o</span>
+    </div>
+
+    <div class="w3-main w3-row-padding" style="margin:5%;">
+        <div class="w3-third" id="Tank">
+            <div class="w3-card-4 w3-display-container" style="margin-bottom: 20px;height:500px;border-radius:3px;background-color:#1F1B24;">
+                <div class="w3-bar w3-large" style="z-index:4">
+                    <span class="w3-bar-item w3-left w3-text-white" style="text-shadow:1px 1px 0 #444">Nivel de
+						Ra&ccedil;&atilde;o</span>
+                </div>
+                <div class="tk w3-display-middle">
+                    <h3 class="text w3-text-white"></h3>
+                    <div class="lq w3-text-white" id="nivel" data-amount="0">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-third">
+            <div class="w3-card-4" id="manual" style="margin-bottom: 60px;border-radius: 3px;background-color:#1F1B24;">
+                <div class="w3-bar w3-large" style="z-index:4">
+                    <span class="w3-bar-item w3-left w3-text-white" style="text-shadow:1px 1px 0 #444">Acionamento
+						Manual</span>
+                </div>
+                <form class="w3-container">
+                    <input class="w3-radio" type="radio" name="tamanhoPorcao1" id="pequena" value="pequena">
+                    <label class="w3-text-white" for="pequena">Pequena</label>
+                    <p></p>
+                    <input class="w3-radio" type="radio" name="tamanhoPorcao1" id="media" value="media" checked>
+                    <label class="w3-text-white" for="media">Media</label>
+                    <p></p>
+                    <input class="w3-radio" type="radio" name="tamanhoPorcao1" id="grande" value="grande">
+                    <label class="w3-text-white" for="grande">Grande</label>
+                    <p></p>
+                </form>
+                <div class="button1">
+                    <button class="w3-button w3-deep-purple w3-round w3-hover-purple w3-col" type="button" onclick="enviarManual()">Liberar Comida</button>
+                </div>
+            </div>
+            <div class="w3-card-4" id="auto" style="border-radius: 3px;background-color:#1F1B24;">
+                <div class="w3-bar w3-large" style="z-index:4">
+                    <span class="w3-bar-item w3-left w3-text-white" style="text-shadow:1px 1px 0 #444">Acionamento
+						Automatico</span>
+                </div>
+                <form class="w3-container">
+                    <label class="w3-text-white" for="horaInicio">Hora de Inicio:</label>
+                    <input type="time" id="horaInicio" name="horaInicio">
+                    <p></p>
+                    <input class="w3-radio" type="radio" name="tamanhoPorcao2" id="pequena1" value="pequena">
+                    <label class="w3-text-white" for="pequena1">Pequena</label>
+                    <p></p>
+                    <input class="w3-radio" type="radio" name="tamanhoPorcao2" id="media1" value="media" checked>
+                    <label class="w3-text-white" for="media1">Media</label>
+                    <p></p>
+                    <input class="w3-radio" type="radio" name="tamanhoPorcao2" id="grande1" value="grande">
+                    <label class="w3-text-white" for="grande1">Grande</label>
+                    <p></p>
+                </form>
+                <div class="button1">
+                    <button class="w3-button w3-deep-purple w3-round w3-hover-purple w3-col" type="button" onclick="enviarAuto()">Programar</button>
+                </div>
+            </div>
+        </div>
+        <div class="w3-third">
+            <div class="w3-card-4" id="savedTimes" style="border-radius: 3px;background-color:#1F1B24;">
+                <div class="w3-bar w3-large" style="z-index:4">
+                    <span class="w3-bar-item w3-left w3-text-white" style="text-shadow:1px 1px 0 #444">Acionamentos
+						Salvos</span>
+                </div>
+                <div class="w3-container" id="autoTimes" style="background-color:#211D27">
+                    <div target="displayTimes">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+<script src="script.js"></script>
